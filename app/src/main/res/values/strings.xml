@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="hint_height"><font size="16">Tinggi (cm)</font></string>
+    <string name="hint_weight"><font size="16">Berat Badan (kg)</font></string>
+    <string name="hint_male"><font size="14">Laki - laki</font></string>
+    <string name="hint_female"><font size="14">Perempuan</font></string>
+</resources>
