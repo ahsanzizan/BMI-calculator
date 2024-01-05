@@ -40,13 +40,13 @@ class MainActivity : AppCompatActivity() {
             else -> 0.0
         }
 
-        val result = when {
+        val result = "Hasil " + when {
             bmi < 18.5 -> "Kekurangan gizi"
             bmi >= 18.5 && bmi < 24.9 -> "Normal"
             bmi >= 25 && bmi < 29.9 -> "Kelebihan gizi"
             else -> "Obesitas"
         }
 
-        resultText.text = "Hasil: $result"
+        resultText.text = result
     }
 }
