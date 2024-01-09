@@ -8,22 +8,32 @@ import android.widget.RadioGroup
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-    private var gender = "Laki - laki"
-    private val calculateBtn = findViewById<Button>(R.id.calculateBtn)
-    private val editTextheight = findViewById<EditText>(R.id.editTextHeight)
-    private val editTextWeight = findViewById<EditText>(R.id.editTextWeight)
-    private val genders = findViewById<RadioGroup>(R.id.radioGroupGender)
-    private val resultText = findViewById<TextView>(R.id.result)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val calculateBtn = findViewById<Button>(R.id.calculateBtn)
+        val resetBtn = findViewById<Button>(R.id.resetBtn)
 
         calculateBtn.setOnClickListener { calculate() }
+        resetBtn.setOnClickListener { resetInputs() }
+    }
+
+    private fun resetInputs() {
+        val editTextHeight = findViewById<EditText>(R.id.editTextHeight)
+        val editTextWeight = findViewById<EditText>(R.id.editTextWeight)
+
+        editTextWeight.setText("")
+        editTextHeight.setText("")
     }
 
     private fun calculate() {
-        val height = editTextheight.text.toString().toDouble()
+        var gender = "Laki - laki"
+        val editTextHeight = findViewById<EditText>(R.id.editTextHeight)
+        val editTextWeight = findViewById<EditText>(R.id.editTextWeight)
+        val genders = findViewById<RadioGroup>(R.id.radioGroupGender)
+        val resultText = findViewById<TextView>(R.id.result)
+
+        val height = editTextHeight.text.toString().toDouble()
         val weight = editTextWeight.text.toString().toDouble()
 
         val selectedGender = genders.checkedRadioButtonId
